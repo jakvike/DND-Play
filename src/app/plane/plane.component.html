@@ -1,0 +1,22 @@
+
+<h1>Planes</h1>
+<hr />
+<app-search></app-search>
+<ngb-accordion #acc="ngbAccordion">
+  <ngb-panel *ngFor="let plane of planes; index as i;" id="panel{{i}}">
+    <ng-template ngbPanelHeader let-opened="opened">
+      <div class="d-flex align-items-center justify-content-between" (click)="acc.toggle('panel'+i)">
+        <h5 class="mb-0">{{plane.name}}</h5>
+      </div>
+    </ng-template>
+    <ng-template ngbPanelContent>
+        <div class="m-2">
+            <div>
+              <span class="font-weight-bold">Prerequisite:</span><span class="text-muted"> {{feat.prerequisite}}</span>
+            </div>       
+          </div>
+      <markdown class="variable-binding">{{plane.desc}}</markdown>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
+

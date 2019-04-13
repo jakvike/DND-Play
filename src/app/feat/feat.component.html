@@ -1,0 +1,15 @@
+
+<h1>Feats</h1>
+<hr />
+<ngb-accordion #acc="ngbAccordion">
+  <ngb-panel *ngFor="let feat of feats; index as i;" id="panel{{i}}">
+    <ng-template ngbPanelHeader let-opened="opened">
+      <div class="d-flex align-items-center justify-content-between" (click)="acc.toggle('panel'+i)">
+        <h5 class="mb-0">{{feat.name}}</h5>
+      </div>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <markdown class="variable-binding">{{feat.desc}}</markdown>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

@@ -1,0 +1,15 @@
+
+<h1>Conditions</h1>
+<hr />
+<ngb-accordion #acc="ngbAccordion">
+  <ngb-panel *ngFor="let condition of conditions; index as i;" id="panel{{i}}">
+    <ng-template ngbPanelHeader let-opened="opened">
+      <div class="d-flex align-items-center justify-content-between" (click)="acc.toggle('panel'+i)">
+        <h5 class="mb-0">{{condition.name}}</h5>
+      </div>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <markdown class="variable-binding">{{condition.desc}}</markdown>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

@@ -1,0 +1,36 @@
+<h1>Races</h1>
+<hr />
+<ngb-accordion #acc="ngbAccordion">
+  <ngb-panel *ngFor="let race of races; index as i;" id="panel{{i}}">
+    <ng-template ngbPanelHeader let-opened="opened">
+      <div class="d-flex align-items-center justify-content-between" (click)="acc.toggle('panel'+i)">
+        <h4 class="mb-0">{{race.name}}</h4>
+        <span class="fas" [ngClass]="{ 'fa-minus' : opened, 'fa-plus' : !opened }"></span>
+      </div>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <markdown class="variable-binding">{{race.asi_desc}}</markdown>
+      <span class="font-weight-bold">Speed:</span><span class="text-muted"
+        *ngFor="let speed of race.speed | keyvalue; let isLast=last"> {{speed.key}}:
+        {{speed.value}}ft.{{isLast ? '': ', '}}</span>
+      <markdown class="variable-binding">{{race.speed_desc}}</markdown>
+      <markdown class="variable-binding">{{race.age}}</markdown>
+      <markdown class="variable-binding">{{race.alignment}}</markdown>
+      <markdown class="variable-binding">{{race.size}}</markdown>
+      <markdown class="variable-binding">{{race.languages}}</markdown>
+      <markdown class="variable-binding">{{race.vision}}</markdown>
+      <markdown class="variable-binding">{{race.traits}}</markdown>
+      <div *ngIf="race.subraces.length > 0">
+      <h5>Subraces</h5>
+      <hr />
+      <div *ngFor="let subrace of race.subraces">
+        <div class="m-2">
+          <h6>{{subrace.name}}</h6>
+          <markdown class="variable-binding">{{subrace.asi_desc}}</markdown>
+          <markdown class="variable-binding">{{subrace.desc}}</markdown>
+        </div>
+      </div>
+    </div>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

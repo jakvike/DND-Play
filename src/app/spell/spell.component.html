@@ -1,0 +1,48 @@
+
+<h1>Spells</h1>
+<hr />
+<app-search #search [searchArray]="spells" [searchTypes]="types"></app-search>
+<ngb-accordion #acc="ngbAccordion">
+  <ngb-panel *ngFor="let spell of spells | filterBy: search.searchText; index as i;" id="panel{{i}}">
+    <ng-template ngbPanelHeader let-opened="opened">
+      <div class="d-flex align-items-center justify-content-between" (click)="acc.toggle('panel'+i)">
+        <h5 class="mb-0">{{spell.name}}</h5>
+      </div>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <h6>{{spell.level}} {{spell.school}}</h6>
+      <hr />
+      <div class="m-2">
+        <div>
+          <span class="font-weight-bold">Casting Time:</span><span class="text-muted"> {{spell.casting_time}}</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">Range:</span><span class="text-muted"> {{spell.range}}</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">Components:</span><span class="text-muted"> {{spell.components}} </span>
+        </div>
+        <div>
+          <span class="font-weight-bold">Duration:</span><span class="text-muted" *ngIf="spell.duration"> {{spell.duration}}</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">Ritual: </span><span class="text-muted"> {{spell.ritual}}</span>
+        </div>
+        <div *ngIf="spell.material != ''">
+          <span class="font-weight-bold">Material:</span><span class="text-muted"> {{spell.material}}</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">Concentratration:</span><span class="text-muted"> {{spell.concentration}}</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">Page:</span><span class="text-muted"> {{spell.page}}</span>
+        </div>
+      </div>
+      <markdown class="variable-binding">{{spell.desc}}</markdown>
+      <div *ngIf="spell.higher_level">
+        <h6 class="mb-1">At Higher Level</h6><span> {{spell.higher_level}}</span>
+      </div>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
+

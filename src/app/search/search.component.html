@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-2">
+  <mat-form-field>    
+    <mat-label>Filter by</mat-label>
+    <mat-select #searchSelect (selectionChange)="selectionChange(searchSelect.value)">      
+      <mat-option *ngFor="let searchType of searchTypes" [value]="searchType.value">
+        {{searchType.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="col-4">
+  <mat-form-field class="example-full-width">
+      <input #searchText matInput placeholder="Filter" (input)="textChange(searchText.value)" value="">
+    </mat-form-field>
+  </div>
+</div>

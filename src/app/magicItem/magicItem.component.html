@@ -1,0 +1,28 @@
+
+<h1>Magic Items</h1>
+<hr />
+<app-search #search [searchArray]="magicitems" [searchTypes]="types"></app-search>
+<ngb-accordion #acc="ngbAccordion">
+  <ngb-panel *ngFor="let magicItem of magicitems | filterBy: search.searchText; index as i;" id="panel{{i}}">
+    <ng-template ngbPanelHeader let-opened="opened">
+      <div class="d-flex align-items-center justify-content-between" (click)="acc.toggle('panel'+i)">
+        <h5 class="mb-0">{{magicItem.name}}</h5>
+      </div>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <div class="m-2">
+        <div>
+          <span class="font-weight-bold">Type:</span><span class="text-muted"> {{magicItem.type}}</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">Rarity:</span><span class="text-muted"> {{magicItem.rarity}}</span>
+        </div>
+        <div *ngIf="magicItem.requires_attunement !== ''">
+          <span class="font-weight-bold">Requires Attunement:</span><span class="text-muted"> {{magicItem.requires_attunement}} </span>
+        </div>
+      </div>
+      <markdown class="variable-binding">{{magicItem.desc}}</markdown>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
+

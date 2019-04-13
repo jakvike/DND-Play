@@ -1,0 +1,21 @@
+<div class='main-nav'>
+  <nav class='navbar sticky-top navbar-expand-lg navbar-dark bg-dark d-flex flex-column'>
+    <div class="navbar-header p-0">
+      <a class='navbar-brand' [routerLink]='["/"]'>D&#38;D Play</a>
+      <button type='button' class='navbar-toggler' data-toggle='collapse' data-target='#navbarNav' [attr.aria-expanded]='isExpanded' (click)='toggle()'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='navbar-toggler-icon'></span>
+      </button>
+    </div>
+    <div class='clearfix p-2'></div>
+    <div id="navbarNav" class='navbar-collapse' [ngClass]='{ "collapse": isExpanded }'>
+      <ul class='nav navbar-nav flex-column'>
+        <li class="nav-item" [routerLinkActive]='["link-active"]' *ngFor="let navItem of navItems" [routerLinkActiveOptions]="{exact: true}">            
+          <a [routerLink]='[navItem.link]' class="nav-link" (click)='toggle()'>
+              {{navItem.name}}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

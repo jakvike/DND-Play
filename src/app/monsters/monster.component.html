@@ -1,0 +1,75 @@
+<h1>Monsters</h1>
+<hr />
+<app-search #search [searchArray]="monsters" [searchTypes]="types"></app-search>
+<ngb-accordion #acc="ngbAccordion">
+  <ngb-panel *ngFor="let monster of monsters | filterBy: search.searchText; index as i;" id="panel{{i}}">
+    <ng-template ngbPanelHeader let-opened="opened">
+      <div class="d-flex align-items-center justify-content-between" (click)="acc.toggle('panel'+i)">
+        <h4 class="mb-0">{{monster.name}}</h4>
+        <span class="fas" [ngClass]="{ 'fa-minus' : opened, 'fa-plus' : !opened }"></span>
+      </div>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <h5 class="text-muted" *ngIf="monster.subtype === ''">{{monster.size}} {{monster.type}}, {{monster.alignment}}
+      </h5>
+      <h5 class="text-muted" *ngIf="monster.subtype !== ''">{{monster.size}} {{monster.type}} ({{monster.subtype}}),
+        {{monster.alignment}}</h5>
+      <hr>
+      <div class="m-2">
+        <div>
+          <span class="font-weight-bold">Armor Class:</span><span class="text-muted"> {{monster.armor_class}}
+            {{monster.armor_desc}}</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">Hit Points:</span><span class="text-muted"> {{monster.hit_points}}
+            ({{monster.hit_dice}})</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">Speed:</span><span class="text-muted" *ngFor="let speed of monster.speed | keyvalue; let isLast=last"> {{speed.key}}: {{speed.value}}ft.{{isLast ? '': ', '}}</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">Skills:</span><span class="text-muted"> {{monster.skills}}</span>
+        </div>
+        <div *ngIf="monster.damage_immunities !== ''">
+          <span class="font-weight-bold">Damage Immunities: </span><span class="text-muted">
+            {{monster.damage_immunities}}</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">Senses:</span><span class="text-muted"> {{monster.senses}}</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">Languages:</span><span class="text-muted"> {{monster.languages}}</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">Challenge:</span><span class="text-muted"> {{monster.challenge_rating}}
+            ({{(monster.xp)}} XP)</span>
+        </div>
+      </div>
+      <br />
+      <div *ngFor="let specAbilities of monster.special_abilities">
+        <h6>{{specAbilities.name}}</h6>
+        {{specAbilities.desc}}
+      </div>
+      <br />
+      <h5>Actions</h5>
+      <hr />
+      <div *ngFor="let action of monster.actions">
+        <div class="m-2">
+          <h6>{{action.name}}</h6>
+          {{action.desc}}
+        </div>
+      </div>
+      <div *ngIf="monster.legendary_actions !== ''">
+        <br />
+        <h5>Legendary Actions</h5>
+        <hr />
+        <div *ngFor="let action of monster.legendary_actions">
+          <div class="m-2">
+            <h6>{{action.name}}</h6>
+            <markdown class="variable-binding">{{action.desc}}</markdown>
+          </div>
+        </div>
+      </div>      
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
