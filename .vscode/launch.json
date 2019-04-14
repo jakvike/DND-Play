@@ -11,7 +11,7 @@
             "program": "${workspaceFolder}\\webpack.config.js",
             "preLaunchTask": "tsc: build - tsconfig.json",
             "outFiles": [
-                "${workspaceFolder}/dist/out-tsc/**/*.js"
+                "${workspaceFolder}/dist/**/*.js"
             ]
         }
     ]

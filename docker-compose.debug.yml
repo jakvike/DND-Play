@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  open5e:
+    image: open5e
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 4200:4200

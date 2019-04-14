@@ -17,23 +17,23 @@ export class SearchComponent<T extends iApiModel> {
   @Input() searchArray: Array<T>;
   searchTypeSelected: string;
   @Output() searchText: {};
-  private isSearchTypeSelected: boolean = false;
+  private isSearchTypeSelected = false;
 
-  selectionChange(selected: string){
+  selectionChange(selected: string) {
     this.searchTypeSelected = selected;
     this.isSearchTypeSelected = true;
   }
 
-  textChange(value: string) : Object {
-    let isValueEmpty: boolean = _.isNil(value) || value === '';
+  textChange(value: string): object {
+    const isValueEmpty: boolean = _.isNil(value) || value === '';
 
-    if(!isValueEmpty && !this.isSearchTypeSelected){
-      this.searchText = {'name': value};
-    } else if(!isValueEmpty) {
+    if (!isValueEmpty && !this.isSearchTypeSelected) {
+      this.searchText = {name: value};
+    } else if (!isValueEmpty) {
       this.searchText = {} as any;
       this.searchText[this.searchTypeSelected] = value;
-    } else if(isValueEmpty){
-      this.searchText = "";
+    } else if (isValueEmpty) {
+      this.searchText = '';
     }
     return this.searchText;
   }

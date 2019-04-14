@@ -2,7 +2,7 @@ version: '3.7'
 services:
   app:
     build: .
-    container_name: open5e_app
+    container_name: jakvike/dndplay
     hostname: jkapp
     domainname: ddns.net
     ports:
