@@ -34,7 +34,7 @@
               "node_modules/font-awesome/scss/font-awesome.scss",
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": ["node_modules/automapper-ts/dist/automapper.min.js"],
             "es5BrowserSupport": true
           },
           "configurations": {

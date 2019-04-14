@@ -24,5 +24,4 @@ export class AsiModel {
   attributes: Array<string>;
   value: number;
 }
-
-
+

@@ -6,8 +6,8 @@ import { RouterModule } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -42,7 +42,7 @@ import { SearchComponent } from './search/search.component';
     PlaneComponent,
     FeatComponent,
     ConditionComponent,
-    SearchComponent
+    SearchComponent,
   ],
 
   imports: [
@@ -70,7 +70,7 @@ import { SearchComponent } from './search/search.component';
     MarkdownModule.forRoot(),
     FontAwesomeModule,
     BrowserAnimationsModule,
-    FilterPipeModule
+    FilterPipeModule,
   ],
   exports: [
     MatButtonModule,
@@ -78,10 +78,10 @@ import { SearchComponent } from './search/search.component';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    FilterPipeModule
+    FilterPipeModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
   constructor() {

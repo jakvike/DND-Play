@@ -1,4 +1,4 @@
 export class SearchType {
-    viewValue: string;
-    value: string;
+  viewValue: string;
+  value: string;
 }

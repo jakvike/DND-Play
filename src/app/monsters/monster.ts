@@ -29,11 +29,11 @@ export class Monster extends BaseApiModel {
 }
 
 export class CrToXp {
-default: CRXP;
+  default: CRXP;
 }
 
 export class CRXP {
   cr: string;
   xp: string;
 }
-
+

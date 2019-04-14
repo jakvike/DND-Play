@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import crToXpJson from './crToxp.json';
-import _ from 'lodash';
+import crToxpJson from './crToxp.json';
+import lodash from 'lodash';
 import { BaseService } from '../services/baseService';
 import { Monster, CRXP } from './monster';
 import { BaseResultsModel } from '../models/baseApiModel';
@@ -10,7 +10,7 @@ import { SearchType } from '../models/search.js';
 @Component({
   selector: 'app-class',
   templateUrl: './monster.component.html',
-  styleUrls: ['./monster.component.scss']
+  styleUrls: ['./monster.component.scss'],
 })
 export class MonsterComponent extends BaseService<BaseResultsModel<Monster>> implements OnInit {
   monsters: Array<Monster>;

@@ -7,7 +7,7 @@ import { BaseResultsModel } from '../models/baseApiModel';
 @Component({
   selector: 'app-class',
   templateUrl: './class.component.html',
-  styleUrls: ['./class.component.scss']
+  styleUrls: ['./class.component.scss'],
 })
 export class ClassComponent extends BaseService<BaseResultsModel<Class>> implements OnInit {
   classes: Array<Class>;

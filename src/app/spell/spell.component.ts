@@ -10,23 +10,29 @@ import * as _ from 'lodash';
   selector: 'app-spell',
   templateUrl: './spell.component.html',
 })
-export class SpellComponent extends BaseService<BaseResultsModel<Spell>> implements OnInit {
+export class SpellComponent<T extends Spell> extends BaseService<BaseResultsModel<T>> implements OnInit {
   types: Array<SearchType>;
-  spells: Array<Spell>;
-
+  items: Array<T>;
+  title: string;
   constructor(http: HttpClient) {
-    const baseModelUrl = 'spells';
+    const url = 'Spells';
+    const baseModelUrl = url;
     super(baseModelUrl, http);
+    this.title = url;
   }
   ngOnInit(): void {
-    this.spells = new Array<Spell>();
+    this.items = new Array<T>();
     this.types = new Array<SearchType>();
 
     super.findAll().subscribe(response => {
       response.results.forEach(result => {
-        this.spells.push(result);
+        this.items.push(result);
         this.types = super.getFilterBy(result);
       });
     });
   }
 }
+
+// automapper.createMap('Token', 'User')
+//          .forMember('firstName', (opts) => { opts.mapFrom('given_name'); })
+//          .forMember('lastName', (opts) => { opts.mapFrom('family_name'); } )

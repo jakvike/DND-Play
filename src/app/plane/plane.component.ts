@@ -8,19 +8,22 @@ import { BaseResultsModel } from '../models/baseApiModel';
   selector: 'app-plane',
   templateUrl: './plane.component.html',
 })
-export class PlaneComponent extends BaseService<BaseResultsModel<Plane>> implements OnInit {
-  planes: Array<Plane>;
+export class PlaneComponent<T extends Plane> extends BaseService<BaseResultsModel<T>> implements OnInit {
+  items: Array<T>;
+  title: string;
   constructor(http: HttpClient) {
-    const baseModelUrl = 'planes';
+    const url = 'Planes';
+    const baseModelUrl = url;
     super(baseModelUrl, http);
+    this.title = url;
   }
 
   ngOnInit(): void {
-    this.planes = new Array<Plane>();
+    this.items = new Array<T>();
 
     super.findAll().subscribe(response => {
       response.results.forEach(result => {
-        this.planes.push(result);
+        this.items.push(result);
       });
     });
   }

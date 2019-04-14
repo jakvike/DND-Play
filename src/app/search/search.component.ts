@@ -9,7 +9,7 @@ import { Type } from '@angular/compiler';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent<T extends iApiModel> {
   faCoffee = this.faCoffee;
@@ -28,7 +28,7 @@ export class SearchComponent<T extends iApiModel> {
     const isValueEmpty: boolean = _.isNil(value) || value === '';
 
     if (!isValueEmpty && !this.isSearchTypeSelected) {
-      this.searchText = {name: value};
+      this.searchText = { name: value };
     } else if (!isValueEmpty) {
       this.searchText = {} as any;
       this.searchText[this.searchTypeSelected] = value;

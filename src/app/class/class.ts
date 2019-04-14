@@ -16,5 +16,3 @@ export class Class extends  BaseApiModel {
   subtypes_name: string;
   archetypes: Array<iApiModel>;
 }
-
-

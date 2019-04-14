@@ -16,5 +16,3 @@ export class Spell extends BaseApiModel {
   archetype: string;
   circles: string;
 }
-
-

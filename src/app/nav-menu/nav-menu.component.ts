@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NavItem } from './navItem';
-import navJson from './navItems.json';
-
+import navItemsJson from './navItems.json';
 
 @Component({
   selector: 'app-nav-menu',
   templateUrl: './nav-menu.component.html',
-  styleUrls: ['./nav-menu.component.scss']
+  styleUrls: ['./nav-menu.component.scss'],
 })
 export class NavMenuComponent implements OnInit {
   navItems: NavItem[];

@@ -2,51 +2,51 @@
   {
     name: 'Home',
     link: '/',
-    class: '[\'fas\', \'calendar\']'
+    class: '[\'fas\', \'calendar\']',
   },
   {
     name: 'Spells',
     link: '/spells',
-    class: '[\'far\', \'magic\']'
+    class: '[\'far\', \'magic\']',
   },
   {
     name: 'Classes',
     link: '/classes',
-    class: '[\'far\', \'circle\']'
+    class: '[\'far\', \'circle\']',
   },
   {
     name: 'Monsters',
     link: '/monsters',
-    class: '[\'far\', \'circle\']'
+    class: '[\'far\', \'circle\']',
   },
   {
     name: 'Magic Items',
     link: '/magicitems',
-    class: '[\'far\', \'circle\']'
+    class: '[\'far\', \'circle\']',
   },
   {
     name: 'Races',
     link: '/races',
-    class: '[\'far\', \'circle\']'
+    class: '[\'far\', \'circle\']',
   },
   {
     name: 'Backgrounds',
     link: '/backgrounds',
-    class: '[\'far\', \'circle\']'
+    class: '[\'far\', \'circle\']',
   },
   {
     name: 'Planes',
     link: '/planes',
-    class: '[\'far\', \'circle\']'
+    class: '[\'far\', \'circle\']',
   },
   {
     name: 'Feats',
     link: '/feats',
-    class: '[\'far\', \'circle\']'
+    class: '[\'far\', \'circle\']',
   },
   {
     name: 'Conditions',
     link: '/conditions',
-    class: '[\'far\', \'circle\']'
-  }
-];
+    class: '[\'far\', \'circle\']',
+  },
+];; ; ;

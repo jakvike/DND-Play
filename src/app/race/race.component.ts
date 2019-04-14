@@ -6,21 +6,24 @@ import { BaseResultsModel } from '../models/baseApiModel';
 
 @Component({
   selector: 'app-race',
-  templateUrl: './race.component.html'
+  templateUrl: './race.component.html',
 })
-export class RaceComponent extends BaseService<BaseResultsModel<Race>> implements OnInit {
-  races: Array<Race>;
+export class RaceComponent<T extends Race> extends BaseService<BaseResultsModel<T>> implements OnInit {
+  title: string;
+  items: Array<T>;
   constructor(http: HttpClient) {
-    const baseModelUrl = 'races';
+    const url = 'Races';
+    const baseModelUrl = url;
     super(baseModelUrl, http);
+    this.title = url;
   }
 
   ngOnInit(): void {
-    this.races = new Array<Race>();
+    this.items = new Array<T>();
 
     super.findAll().subscribe((response) => {
       response.results.forEach(result => {
-        this.races.push(result);
+        this.items.push(result);
       });
     });
   }

@@ -5,5 +5,4 @@ export class MagicItem extends BaseApiModel {
   rarity: string;
   requires_attunement: string;
 }
-
-
+
