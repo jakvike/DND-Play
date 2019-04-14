@@ -12,7 +12,7 @@ export class PlaneComponent<T extends Plane> extends BaseService<BaseResultsMode
   items: Array<T>;
   title: string;
   constructor(http: HttpClient) {
-    const url = 'Planes';
+    const url = 'planes';
     const baseModelUrl = url;
     super(baseModelUrl, http);
     this.title = url;

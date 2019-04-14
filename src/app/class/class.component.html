@@ -1,11 +1,11 @@
 
-<h1>Classes</h1>
+<h1>{{title | titlecase}}</h1>
 <hr />
 <ngb-accordion #acc="ngbAccordion">
-  <ngb-panel *ngFor="let class of classes; index as i;" id="panel{{i}}">
+  <ngb-panel *ngFor="let item of items; index as i;" id="panel{{i}}">
     <ng-template ngbPanelHeader let-opened="opened">
       <div class="d-flex align-items-center justify-content-between" (click)="acc.toggle('panel'+i)">
-        <h4 class="mb-0">{{class.name}}</h4>
+        <h4 class="mb-0">{{item.name}}</h4>
         <span class="fas" [ngClass]="{ 'fa-minus' : opened, 'fa-plus' : !opened }"></span>
       </div>
     </ng-template>
@@ -14,19 +14,19 @@
       <hr />
       <div class="m-2">
         <div>
-          <span class="font-weight-bold">Hit Dice:</span><span class="text-muted"> {{class.hit_dice}}</span>
+          <span class="font-weight-bold">Hit Dice:</span><span class="text-muted"> {{item.hit_dice}}</span>
         </div>
         <div>
-          <span class="font-weight-bold">HP 1st Level:</span><span class="text-muted"> {{class.hp_at_1st_level}}</span>
+          <span class="font-weight-bold">HP 1st Level:</span><span class="text-muted"> {{item.hp_at_1st_level}}</span>
         </div>
         <div>
-          <span class="font-weight-bold">HP Higher Level:</span><span class="text-muted"> {{class.hp_at_higher_levels}}</span>
+          <span class="font-weight-bold">HP Higher Level:</span><span class="text-muted"> {{item.hp_at_higher_levels}}</span>
         </div>
-        <div *ngIf="class.spellcasting_ability">
-          <span class="font-weight-bold">Spell Casting Ability:</span><span class="text-muted"> {{class.spellcasting_ability}}</span>
+        <div *ngIf="item.spellcasting_ability">
+          <span class="font-weight-bold">Spell Casting Ability:</span><span class="text-muted"> {{item.spellcasting_ability}}</span>
         </div>
         <div>
-          <span class="font-weight-bold">Saving Throws:</span><span class="text-muted"> {{class.prof_saving_throws}}</span>
+          <span class="font-weight-bold">Saving Throws:</span><span class="text-muted"> {{item.prof_saving_throws}}</span>
         </div>
       </div>
       <br />
@@ -34,43 +34,43 @@
       <hr />
       <div class="m-2">
         <div>
-          <span class="font-weight-bold">Armor:</span><span class="text-muted"> {{class.prof_armor}}</span>
+          <span class="font-weight-bold">Armor:</span><span class="text-muted"> {{item.prof_armor}}</span>
         </div>
         <div>
-          <span class="font-weight-bold">Weapons:</span><span class="text-muted"> {{class.prof_weapons}}</span>
+          <span class="font-weight-bold">Weapons:</span><span class="text-muted"> {{item.prof_weapons}}</span>
         </div>
         <div>
-          <span class="font-weight-bold">Tools:</span><span class="text-muted"> {{class.prof_tools}}</span>
+          <span class="font-weight-bold">Tools:</span><span class="text-muted"> {{item.prof_tools}}</span>
         </div>
         <div>
-          <span class="font-weight-bold">Skills:</span><span class="text-muted"> {{class.prof_skills}}</span>
+          <span class="font-weight-bold">Skills:</span><span class="text-muted"> {{item.prof_skills}}</span>
         </div>
         <div>
-          <span class="font-weight-bold">Saving Throws:</span><span class="text-muted"> {{class.prof_saving_throws}}</span>
+          <span class="font-weight-bold">Saving Throws:</span><span class="text-muted"> {{item.prof_saving_throws}}</span>
         </div>
       </div>
       <br />
       <h5>Equipment</h5>
       <hr />
       <div class="m-2">
-        <markdown class="variable-binding">{{class.equipment}}</markdown>
+        <markdown class="variable-binding">{{item.equipment}}</markdown>
       </div>
       <br />
-      <h5>The {{class.name}}</h5>
+      <h5>The {{item.name}}</h5>
       <hr />
-      <markdown class="variable-binding">{{class.table}}</markdown>
+      <markdown class="variable-binding">{{item.table}}</markdown>
       <br/><br />
       <h5>Class Abilities</h5>
       <hr />
 
-        <markdown class="variable-binding">{{class.desc}}</markdown>
+        <markdown class="variable-binding">{{item.desc}}</markdown>
 
       <br />
-      <div *ngIf="class.archetypes">
-        <h5 class="mb-0">{{class.name}} Path</h5>
+      <div *ngIf="item.archetypes">
+        <h5 class="mb-0">{{item.name}} Path</h5>
         <hr />
         <ul class="list-unstyled">
-          <li *ngFor="let archetype of class.archetypes">
+          <li *ngFor="let archetype of item.archetypes">
             <h5>{{archetype.name}}</h5>
             <markdown class="variable-binding">{{archetype.desc}}</markdown>
           </li>

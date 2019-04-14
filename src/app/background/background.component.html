@@ -1,29 +1,29 @@
 
-<h1>Backgrounds</h1>
+<h1>{{title | titlecase}}</h1>
 <hr />
 <ngb-accordion #acc="ngbAccordion">
-  <ngb-panel *ngFor="let background of backgrounds; index as i;" id="panel{{i}}">
+  <ngb-panel *ngFor="let item of items; index as i;" id="panel{{i}}">
     <ng-template ngbPanelHeader let-opened="opened">
       <div class="d-flex align-items-center justify-content-between" (click)="acc.toggle('panel'+i)">
-        <h5 class="mb-0">{{background.name}}</h5>
+        <h5 class="mb-0">{{item.name}}</h5>
       </div>
     </ng-template>
     <ng-template ngbPanelContent>
       <div class="m-2">
         <div>
-          <span class="font-weight-bold">Skill Proficiencies:</span><span class="text-muted"> {{background.skill_proficiencies}}</span>
+          <span class="font-weight-bold">Skill Proficiencies:</span><span class="text-muted"> {{item.skill_proficiencies}}</span>
         </div>
         <div>
-          <span class="font-weight-bold">Languages:</span><span class="text-muted"> {{background.languages}}</span>
+          <span class="font-weight-bold">Languages:</span><span class="text-muted"> {{item.languages}}</span>
         </div>        
       </div>
-      <markdown class="variable-binding">{{background.desc}}</markdown>
+      <markdown class="variable-binding">{{item.desc}}</markdown>
 
-      <h6>{{background.feature}}</h6>
+      <h6>{{item.feature}}</h6>
       <hr />
-      <markdown class="variable-binding">{{background.feature_desc}}</markdown>
-      <markdown class="variable-binding">{{background.equipment}}</markdown>
-      <markdown class="variable-binding">{{background.suggested_characteristics}}</markdown>
+      <markdown class="variable-binding">{{item.feature_desc}}</markdown>
+      <markdown class="variable-binding">{{item.equipment}}</markdown>
+      <markdown class="variable-binding">{{item.suggested_characteristics}}</markdown>
     </ng-template>
   </ngb-panel>
 </ngb-accordion>

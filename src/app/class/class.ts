@@ -1,5 +1,5 @@
 import { BaseApiModel } from '../models/baseApiModel';
-import { IApiModel } from '../interfaces/IApiModel';
+import { IapiModel } from '../interfaces/IApiModel';
 
 export class Class extends  BaseApiModel {
   hit_dice: string;
@@ -14,5 +14,5 @@ export class Class extends  BaseApiModel {
   table: string;
   spellcasting_ability: string;
   subtypes_name: string;
-  archetypes: Array<IApiModel>;
+  archetypes: Array<IapiModel>;
 }

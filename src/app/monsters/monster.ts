@@ -1,9 +1,9 @@
 import { BaseApiModel } from '../models/baseApiModel';
-import { iApiModel, IMonsterApiModel } from '../interfaces/iApiModel';
-import { IDamageAttributes } from '../interfaces/iDamageAttributes';
-import { iAttributes } from '../interfaces/iAttributes';
-import { ISaveAttributes } from '../interfaces/iSaveAttributes';
-import { iKeyValuePair } from '../interfaces/iKeyValuePair';
+import { IapiModel, ImonsterApiModel } from '../interfaces/iApiModel';
+import { IdamageAttributes } from '../interfaces/iDamageAttributes';
+import { Iattributes } from '../interfaces/iAttributes';
+import { IsaveAttributes } from '../interfaces/iSaveAttributes';
+import { IkeyValuePair } from '../interfaces/iKeyValuePair';
 
 export class Monster extends BaseApiModel {
   size: string;
@@ -15,16 +15,16 @@ export class Monster extends BaseApiModel {
   armor_desc: string;
   hit_points: number;
   hit_dice: string;
-  speed: iKeyValuePair<string, number>;
-  attributes: iAttributes;
-  damages: IDamageAttributes;
-  saves: ISaveAttributes;
+  speed: IkeyValuePair<string, number>;
+  attributes: Iattributes;
+  damages: IdamageAttributes;
+  saves: IsaveAttributes;
   senses: string;
   challenge_rating: string;
   perception: number;
   reactions: string;
-  legendary_actions: Array<iApiModel>;
-  actions: IMonsterApiModel;
+  legendary_actions: Array<IapiModel>;
+  actions: ImonsterApiModel;
   xp: string;
 }
 
@@ -36,4 +36,5 @@ export class CRXP {
   cr: string;
   xp: string;
 }
-
+
+

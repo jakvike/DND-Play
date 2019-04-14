@@ -12,7 +12,7 @@ export class RaceComponent<T extends Race> extends BaseService<BaseResultsModel<
   title: string;
   items: Array<T>;
   constructor(http: HttpClient) {
-    const url = 'Races';
+    const url = 'races';
     const baseModelUrl = url;
     super(baseModelUrl, http);
     this.title = url;

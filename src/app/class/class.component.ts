@@ -10,18 +10,21 @@ import { BaseResultsModel } from '../models/baseApiModel';
   'styleUrls': ['./class.component.scss'],
 })
 export class ClassComponent<T extends Class> extends BaseService<BaseResultsModel<T>> implements OnInit {
-  classes: Array<T>;
+  items: Array<T>;
+  title: string;
   constructor(http: HttpClient) {
-    const baseModelUrl = 'classes';
+    const url = 'classes';
+    const baseModelUrl = url;
     super(baseModelUrl, http);
+    this.title = url;
   }
 
   ngOnInit(): void {
-    this.classes = new Array<T>();
+    this.items = new Array<T>();
 
     super.findAll().subscribe((response) => {
       response.results.forEach((result) => {
-        this.classes.push(result);
+        this.items.push(result);
       });
     });
   }

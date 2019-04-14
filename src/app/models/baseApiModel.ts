@@ -1,4 +1,4 @@
-import { IapiModel, IresultModel, IMonsterApiModel } from '../interfaces/iApiModel';
+import { IapiModel, IresultModel, ImonsterApiModel } from '../interfaces/iApiModel';
 
 export class BaseApiModel implements IapiModel {
   desc: string;
@@ -11,7 +11,7 @@ export class BaseResultsModel<T> implements IresultModel<T> {
   results: T[];
 }
 
-export class BaseMonsterApiModel implements IMonsterApiModel {
+export class BaseMonsterApiModel implements ImonsterApiModel {
   slug: string;
   name: string;
   document_slug: string;

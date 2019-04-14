@@ -17,7 +17,7 @@ export abstract class BaseService<T> implements IWrite<T>, IRead<T> {
   }
 
   findAll(): Observable<T> {
-    return this.http.get<T>('${this.url}?limit=1000');
+    return this.http.get<T>(this.url + '?limit=1000');
   }
   find(item: T): Observable<T> {
     throw new Error('Method not implemented.');

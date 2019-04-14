@@ -1,4 +1,4 @@
-<h1>{{title}}</h1>
+<h1>{{title | titlecase}}</h1>
 <hr />
 <ngb-accordion #acc="ngbAccordion">
   <ngb-panel *ngFor="let item of items; index as i;" id="panel{{i}}">
@@ -11,7 +11,7 @@
     <ng-template ngbPanelContent>
       <markdown class="variable-binding">{{item.asi_desc}}</markdown>
       <span class="font-weight-bold">Speed:</span><span class="text-muted"
-        *ngFor="let speed of race.speed | keyvalue; let isLast=last"> {{speed.key}}:
+        *ngFor="let speed of item.speed | keyvalue; let isLast=last"> {{speed.key}}:
         {{speed.value}}ft.{{isLast ? '': ', '}}</span>
       <markdown class="variable-binding">{{item.speed_desc}}</markdown>
       <markdown class="variable-binding">{{item.age}}</markdown>

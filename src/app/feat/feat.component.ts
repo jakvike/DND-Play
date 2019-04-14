@@ -9,18 +9,21 @@ import { BaseResultsModel } from '../models/baseApiModel';
   'templateUrl': './feat.component.html',
 })
 export class FeatComponent<T extends Feat> extends BaseService<BaseResultsModel<T>> implements OnInit {
-  feats: Array<T>;
+  items: Array<T>;
+  title: string;
   constructor(http: HttpClient) {
-    const baseModelUrl = 'feats';
+    const url = 'feats';
+    const baseModelUrl = url;
     super(baseModelUrl, http);
+    this.title = url;
   }
 
   ngOnInit(): void {
-    this.feats = new Array<T>();
+    this.items = new Array<T>();
 
     super.findAll().subscribe((response) => {
       response.results.forEach((result) => {
-        this.feats.push(result);
+        this.items.push(result);
       });
     });
   }

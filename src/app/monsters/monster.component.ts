@@ -13,18 +13,21 @@ import * as _ from 'lodash';
   'styleUrls': ['./monster.component.scss'],
 })
 export class MonsterComponent<T extends Monster> extends BaseService<BaseResultsModel<T>> implements OnInit {
-  monsters: Array<T>;
+  items: Array<T>;
   types: Array<SearchType>;
   crToXp: CRXP[];
   speedKeys: any;
+  title: string;
   constructor(http: HttpClient) {
-    const baseModelUrl = 'monsters';
+    const url = 'monsters';
+    const baseModelUrl = url;
     super(baseModelUrl, http);
+    this.title = url;
     this.crToXp = crToxpJson;
   }
 
   ngOnInit(): void {
-    this.monsters = new Array<T>();
+    this.items = new Array<T>();
 
     super.findAll().subscribe((response) => {
       response.results.forEach((result) => {
@@ -33,7 +36,7 @@ export class MonsterComponent<T extends Monster> extends BaseService<BaseResults
         if (crEmpty) {
           result.xp = cr.xp;
         }
-        this.monsters.push(result);
+        this.items.push(result);
         this.types = super.getFilterBy(result);
       });
     });

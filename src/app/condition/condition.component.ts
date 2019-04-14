@@ -9,18 +9,21 @@ import { BaseResultsModel } from '../models/baseApiModel';
   'templateUrl': './condition.component.html',
 })
 export class ConditionComponent<T extends Condition> extends BaseService<BaseResultsModel<T>> implements OnInit {
-  conditions: Array<T>;
+  items: Array<T>;
+  title: string;
   constructor(http: HttpClient) {
-    const baseModelUrl = 'conditions';
+    const url = 'conditions';
+    const baseModelUrl = url;
     super(baseModelUrl, http);
+    this.title = url;
   }
 
   ngOnInit(): void {
-    this.conditions = new Array<T>();
+    this.items = new Array<T>();
 
     super.findAll().subscribe((response) => {
       response.results.forEach((result) => {
-        this.conditions.push(result);
+        this.items.push(result);
       });
     });
   }

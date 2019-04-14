@@ -1,5 +1,5 @@
-export interface INavItem {
+export interface InavItem {
   name: string;
   link: string;
-  class: string;
+  class: string[];
 }

@@ -1,7 +1,7 @@
-import { INavItem } from '../interfaces/iNavItem';
+import { InavItem } from '../interfaces/iNavItem';
 
-export class NavItem implements INavItem {
+export class NavItem implements InavItem {
   name: string;
   link: string;
-  class: string;
+  class: string[];
 }

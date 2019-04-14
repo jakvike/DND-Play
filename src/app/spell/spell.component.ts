@@ -15,7 +15,7 @@ export class SpellComponent<T extends Spell> extends BaseService<BaseResultsMode
   items: Array<T>;
   title: string;
   constructor(http: HttpClient) {
-    const url = 'Spells';
+    const url = 'spells';
     const baseModelUrl = url;
     super(baseModelUrl, http);
     this.title = url;

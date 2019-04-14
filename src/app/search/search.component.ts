@@ -1,17 +1,14 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { SearchType } from '../models/search';
-import { iApiModel } from '../interfaces/iApiModel';
-import { FilterPipe } from 'ngx-filter-pipe';
-import { BaseApiModel } from '../models/baseApiModel';
+import { IapiModel } from '../interfaces/iApiModel';
 import * as _ from 'lodash';
-import { Type } from '@angular/compiler';
 
 @Component({
   'selector': 'app-search',
   'templateUrl': './search.component.html',
   'styleUrls': ['./search.component.scss'],
 })
-export class SearchComponent<T extends iApiModel> {
+export class SearchComponent<T extends IapiModel> {
   faCoffee = this.faCoffee;
   @Input() searchTypes: SearchType[];
   @Input() searchArray: Array<T>;

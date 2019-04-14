@@ -9,19 +9,21 @@ import { BaseResultsModel } from '../models/baseApiModel';
   'templateUrl': './background.component.html',
 })
 export class BackgroundComponent<T extends Background> extends BaseService<BaseResultsModel<T>> implements OnInit {
-  backgrounds: Array<T>;
+  items: Array<T>;
+  title: string;
   constructor(http: HttpClient) {
-    const baseModelUrl = 'backgrounds';
+    const url = 'backgrounds';
+    const baseModelUrl = url;
     super(baseModelUrl, http);
+    this.title = url;
   }
 
   ngOnInit(): void {
-// tslint:disable-next-line: prefer-array-literal
-    this.backgrounds = new Array<T>();
+    this.items = new Array<T>();
 
     super.findAll().subscribe((response) => {
       response.results.forEach((result) => {
-        this.backgrounds.push(result);
+        this.items.push(result);
       });
     });
   }

@@ -8,7 +8,7 @@ import navItemsJson from './navItems.json';
   'styleUrls': ['./nav-menu.component.scss'],
 })
 export class NavMenuComponent implements OnInit {
-  navItems: Array<NavItem>;
+  navItems: NavItem[];
   isExpanded = false;
 
   ngOnInit(): void {
