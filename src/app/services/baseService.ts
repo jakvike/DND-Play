@@ -17,7 +17,7 @@ export abstract class BaseService<T> implements IWrite<T>, IRead<T> {
   }
 
   findAll(): Observable<T> {
-    return this.http.get<T>(this.url + '?limit=1000');
+    return this.http.get<T>('${this.url}?limit=1000');
   }
   find(item: T): Observable<T> {
     throw new Error('Method not implemented.');
@@ -37,8 +37,8 @@ export abstract class BaseService<T> implements IWrite<T>, IRead<T> {
 
   getFilterBy<T>(obj: T): Array<SearchType> {
     const objectKeys = Object.keys(obj) as Array<keyof T>;
-    objectKeys.forEach(key => {
-      const containsKey = _.findKey(this.searchTypes, { value: key });
+    objectKeys.forEach((key) => {
+      const containsKey = _.findKey(this.searchTypes, { 'value': key });
       if (_.isNil(containsKey)) {
         const searchType = new SearchType();
         searchType.value = key.toString();

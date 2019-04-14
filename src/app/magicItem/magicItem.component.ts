@@ -6,11 +6,11 @@ import { BaseResultsModel } from '../models/baseApiModel';
 import { SearchType } from '../models/search';
 
 @Component({
-  selector: 'app-magicItem',
-  templateUrl: './magicItem.component.html',
+  'selector': 'app-magicItem',
+  'templateUrl': './magicItem.component.html',
 })
-export class MagicItemComponent extends BaseService<BaseResultsModel<MagicItem>> implements OnInit {
-  magicitems: Array<MagicItem>;
+export class MagicItemComponent<T extends MagicItem> extends BaseService<BaseResultsModel<T>> implements OnInit {
+  magicitems: Array<T>;
   types: Array<SearchType>;
   constructor(http: HttpClient) {
     const baseModelUrl = 'magicitems';
@@ -18,10 +18,10 @@ export class MagicItemComponent extends BaseService<BaseResultsModel<MagicItem>>
   }
 
   ngOnInit(): void {
-    this.magicitems = new Array<MagicItem>();
+    this.magicitems = new Array<T>();
 
-    super.findAll().subscribe(response => {
-      response.results.forEach(result => {
+    super.findAll().subscribe((response) => {
+      response.results.forEach((result) => {
         this.magicitems.push(result);
         this.types = super.getFilterBy(result);
       });

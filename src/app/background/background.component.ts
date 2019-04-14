@@ -5,21 +5,22 @@ import { HttpClient } from '@angular/common/http';
 import { BaseResultsModel } from '../models/baseApiModel';
 
 @Component({
-  selector: 'app-background',
-  templateUrl: './background.component.html',
+  'selector': 'app-background',
+  'templateUrl': './background.component.html',
 })
-export class BackgroundComponent extends BaseService<BaseResultsModel<Background>> implements OnInit {
-  backgrounds: Array<Background>;
+export class BackgroundComponent<T extends Background> extends BaseService<BaseResultsModel<T>> implements OnInit {
+  backgrounds: Array<T>;
   constructor(http: HttpClient) {
     const baseModelUrl = 'backgrounds';
     super(baseModelUrl, http);
   }
 
   ngOnInit(): void {
-    this.backgrounds = new Array<Background>();
+// tslint:disable-next-line: prefer-array-literal
+    this.backgrounds = new Array<T>();
 
-    super.findAll().subscribe(response => {
-      response.results.forEach(result => {
+    super.findAll().subscribe((response) => {
+      response.results.forEach((result) => {
         this.backgrounds.push(result);
       });
     });

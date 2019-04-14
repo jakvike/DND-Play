@@ -29,7 +29,7 @@ import { ConditionComponent } from './condition/condition.component';
 import { SearchComponent } from './search/search.component';
 
 @NgModule({
-  declarations: [
+  'declarations': [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
@@ -45,8 +45,8 @@ import { SearchComponent } from './search/search.component';
     SearchComponent,
   ],
 
-  imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+  'imports': [
+    BrowserModule.withServerTransition({ 'appId': 'ng-cli-universal' }),
     MatButtonModule,
     MatCheckboxModule,
     MatFormFieldModule,
@@ -55,16 +55,16 @@ import { SearchComponent } from './search/search.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'spells', component: SpellComponent },
-      { path: 'classes', component: ClassComponent },
-      { path: 'monsters', component: MonsterComponent },
-      { path: 'magicitems', component: MagicItemComponent },
-      { path: 'races', component: RaceComponent },
-      { path: 'backgrounds', component: BackgroundComponent },
-      { path: 'planes', component: PlaneComponent },
-      { path: 'feats', component: FeatComponent },
-      { path: 'conditions', component: ConditionComponent },
+      { 'path': '', 'component': HomeComponent, 'pathMatch': 'full' },
+      { 'path': 'spells', 'component': SpellComponent },
+      { 'path': 'classes', 'component': ClassComponent },
+      { 'path': 'monsters', 'component': MonsterComponent },
+      { 'path': 'magicitems', 'component': MagicItemComponent },
+      { 'path': 'races', 'component': RaceComponent },
+      { 'path': 'backgrounds', 'component': BackgroundComponent },
+      { 'path': 'planes', 'component': PlaneComponent },
+      { 'path': 'feats', 'component': FeatComponent },
+      { 'path': 'conditions', 'component': ConditionComponent },
     ]),
     NgbModule,
     MarkdownModule.forRoot(),
@@ -72,7 +72,7 @@ import { SearchComponent } from './search/search.component';
     BrowserAnimationsModule,
     FilterPipeModule,
   ],
-  exports: [
+  'exports': [
     MatButtonModule,
     MatCheckboxModule,
     MatFormFieldModule,
@@ -80,8 +80,8 @@ import { SearchComponent } from './search/search.component';
     MatSelectModule,
     FilterPipeModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  'providers': [],
+  'bootstrap': [AppComponent],
 })
 export class AppModule {
   constructor() {

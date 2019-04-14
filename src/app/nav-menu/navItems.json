@@ -1,52 +1,54 @@
 [
   {
-    name: 'Home',
-    link: '/',
-    class: '[\'fas\', \'calendar\']',
+    'name': 'Home',
+    'link': '/',
+    'class': ['fas', 'calendar']
   },
   {
-    name: 'Spells',
-    link: '/spells',
-    class: '[\'far\', \'magic\']',
+    'name': 'Spells',
+    'link': '/spells',
+    'class': ['far', 'magic']
   },
   {
-    name: 'Classes',
-    link: '/classes',
-    class: '[\'far\', \'circle\']',
+    'name': 'Classes',
+    'link': '/classes',
+    'class': ['far', 'circle']
   },
   {
-    name: 'Monsters',
-    link: '/monsters',
-    class: '[\'far\', \'circle\']',
+    'name': 'Monsters',
+    'link': '/monsters',
+    'class': ['far', 'circle']
   },
   {
-    name: 'Magic Items',
-    link: '/magicitems',
-    class: '[\'far\', \'circle\']',
+    'name': 'Magic Items',
+    'link': '/magicitems',
+    'class': ['far', 'circle']
   },
   {
-    name: 'Races',
-    link: '/races',
-    class: '[\'far\', \'circle\']',
+    'name': 'Races',
+    'link': '/races',
+    'class': ['far', 'circle']
   },
   {
-    name: 'Backgrounds',
-    link: '/backgrounds',
-    class: '[\'far\', \'circle\']',
+    'name': 'Backgrounds',
+    'link': '/backgrounds',
+    'class': ['far', 'circle']
   },
   {
-    name: 'Planes',
-    link: '/planes',
-    class: '[\'far\', \'circle\']',
+    'name': 'Planes',
+    'link': '/planes',
+    'class': ['far', 'circle']
   },
   {
-    name: 'Feats',
-    link: '/feats',
-    class: '[\'far\', \'circle\']',
+    'name': 'Feats',
+    'link': '/feats',
+    'class': ['far', 'circle']
   },
   {
-    name: 'Conditions',
-    link: '/conditions',
-    class: '[\'far\', \'circle\']',
-  },
-];; ; ;
+    'name': 'Conditions',
+    'link': '/conditions',
+    'class': ['far', 'circle']
+  }
+];
+
+

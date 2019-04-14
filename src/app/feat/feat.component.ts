@@ -5,21 +5,21 @@ import { HttpClient } from '@angular/common/http';
 import { BaseResultsModel } from '../models/baseApiModel';
 
 @Component({
-  selector: 'app-feat',
-  templateUrl: './feat.component.html',
+  'selector': 'app-feat',
+  'templateUrl': './feat.component.html',
 })
-export class FeatComponent extends BaseService<BaseResultsModel<Feat>> implements OnInit {
-  feats: Array<Feat>;
+export class FeatComponent<T extends Feat> extends BaseService<BaseResultsModel<T>> implements OnInit {
+  feats: Array<T>;
   constructor(http: HttpClient) {
     const baseModelUrl = 'feats';
     super(baseModelUrl, http);
   }
 
   ngOnInit(): void {
-    this.feats = new Array<Feat>();
+    this.feats = new Array<T>();
 
-    super.findAll().subscribe(response => {
-      response.results.forEach(result => {
+    super.findAll().subscribe((response) => {
+      response.results.forEach((result) => {
         this.feats.push(result);
       });
     });

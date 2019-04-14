@@ -5,22 +5,22 @@ import { Class } from './class';
 import { BaseResultsModel } from '../models/baseApiModel';
 
 @Component({
-  selector: 'app-class',
-  templateUrl: './class.component.html',
-  styleUrls: ['./class.component.scss'],
+  'selector': 'app-class',
+  'templateUrl': './class.component.html',
+  'styleUrls': ['./class.component.scss'],
 })
-export class ClassComponent extends BaseService<BaseResultsModel<Class>> implements OnInit {
-  classes: Array<Class>;
+export class ClassComponent<T extends Class> extends BaseService<BaseResultsModel<T>> implements OnInit {
+  classes: Array<T>;
   constructor(http: HttpClient) {
     const baseModelUrl = 'classes';
     super(baseModelUrl, http);
   }
 
   ngOnInit(): void {
-    this.classes = new Array<Class>();
+    this.classes = new Array<T>();
 
     super.findAll().subscribe((response) => {
-      response.results.forEach(result => {
+      response.results.forEach((result) => {
         this.classes.push(result);
       });
     });

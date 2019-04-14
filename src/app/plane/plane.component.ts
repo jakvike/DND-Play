@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { BaseResultsModel } from '../models/baseApiModel';
 
 @Component({
-  selector: 'app-plane',
-  templateUrl: './plane.component.html',
+  'selector': 'app-plane',
+  'templateUrl': './plane.component.html',
 })
 export class PlaneComponent<T extends Plane> extends BaseService<BaseResultsModel<T>> implements OnInit {
   items: Array<T>;
@@ -21,8 +21,8 @@ export class PlaneComponent<T extends Plane> extends BaseService<BaseResultsMode
   ngOnInit(): void {
     this.items = new Array<T>();
 
-    super.findAll().subscribe(response => {
-      response.results.forEach(result => {
+    super.findAll().subscribe((response) => {
+      response.results.forEach((result) => {
         this.items.push(result);
       });
     });

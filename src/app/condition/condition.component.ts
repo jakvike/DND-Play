@@ -5,21 +5,21 @@ import { HttpClient } from '@angular/common/http';
 import { BaseResultsModel } from '../models/baseApiModel';
 
 @Component({
-  selector: 'app-condition',
-  templateUrl: './condition.component.html',
+  'selector': 'app-condition',
+  'templateUrl': './condition.component.html',
 })
-export class ConditionComponent extends BaseService<BaseResultsModel<Condition>> implements OnInit {
-  conditions: Array<Condition>;
+export class ConditionComponent<T extends Condition> extends BaseService<BaseResultsModel<T>> implements OnInit {
+  conditions: Array<T>;
   constructor(http: HttpClient) {
     const baseModelUrl = 'conditions';
     super(baseModelUrl, http);
   }
 
   ngOnInit(): void {
-    this.conditions = new Array<Condition>();
+    this.conditions = new Array<T>();
 
-    super.findAll().subscribe(response => {
-      response.results.forEach(result => {
+    super.findAll().subscribe((response) => {
+      response.results.forEach((result) => {
         this.conditions.push(result);
       });
     });

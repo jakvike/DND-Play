@@ -5,8 +5,8 @@ import { Race } from './race';
 import { BaseResultsModel } from '../models/baseApiModel';
 
 @Component({
-  selector: 'app-race',
-  templateUrl: './race.component.html',
+  'selector': 'app-race',
+  'templateUrl': './race.component.html',
 })
 export class RaceComponent<T extends Race> extends BaseService<BaseResultsModel<T>> implements OnInit {
   title: string;
@@ -22,7 +22,7 @@ export class RaceComponent<T extends Race> extends BaseService<BaseResultsModel<
     this.items = new Array<T>();
 
     super.findAll().subscribe((response) => {
-      response.results.forEach(result => {
+      response.results.forEach((result) => {
         this.items.push(result);
       });
     });

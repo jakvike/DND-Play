@@ -3,16 +3,16 @@ import { NavItem } from './navItem';
 import navItemsJson from './navItems.json';
 
 @Component({
-  selector: 'app-nav-menu',
-  templateUrl: './nav-menu.component.html',
-  styleUrls: ['./nav-menu.component.scss'],
+  'selector': 'app-nav-menu',
+  'templateUrl': './nav-menu.component.html',
+  'styleUrls': ['./nav-menu.component.scss'],
 })
 export class NavMenuComponent implements OnInit {
-  navItems: NavItem[];
+  navItems: Array<NavItem>;
   isExpanded = false;
 
   ngOnInit(): void {
-    this.navItems = navJson;
+    this.navItems = navItemsJson;
   }
 
   collapse() {

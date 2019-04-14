@@ -1,8 +1,8 @@
-import { iAttributes } from '../interfaces/iAttributes';
-import { ISaveAttributes } from '../interfaces/iSaveAttributes';
-import { IDamageAttributes } from '../interfaces/iDamageAttributes';
+import { Iattributes } from '../interfaces/iAttributes';
+import { IsaveAttributes } from '../interfaces/iSaveAttributes';
+import { IdamageAttributes } from '../interfaces/iDamageAttributes';
 
-export class BaseAttributes implements iAttributes {
+export class BaseAttributes implements Iattributes {
   strength: number;
   dexterity: number;
   constitution: number;
@@ -11,7 +11,7 @@ export class BaseAttributes implements iAttributes {
   charisma: number;
 }
 
-export class BaseSaveAttributes implements ISaveAttributes {
+export class BaseSaveAttributes implements IsaveAttributes {
   strength_save: number | null;
   dexterity_save: number | null;
   constitution_save: number | null;
@@ -20,7 +20,7 @@ export class BaseSaveAttributes implements ISaveAttributes {
   charisma_save: number | null;
 }
 
-export class BaseDamageAttributes implements IDamageAttributes {
+export class BaseDamageAttributes implements IdamageAttributes {
   damage_vulnerabilities: string;
   damage_resistances: string;
   damage_immunities: string;

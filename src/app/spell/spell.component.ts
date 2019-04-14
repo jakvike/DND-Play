@@ -7,8 +7,8 @@ import { SearchType } from '../models/search';
 import * as _ from 'lodash';
 
 @Component({
-  selector: 'app-spell',
-  templateUrl: './spell.component.html',
+  'selector': 'app-spell',
+  'templateUrl': './spell.component.html',
 })
 export class SpellComponent<T extends Spell> extends BaseService<BaseResultsModel<T>> implements OnInit {
   types: Array<SearchType>;
@@ -24,8 +24,8 @@ export class SpellComponent<T extends Spell> extends BaseService<BaseResultsMode
     this.items = new Array<T>();
     this.types = new Array<SearchType>();
 
-    super.findAll().subscribe(response => {
-      response.results.forEach(result => {
+    super.findAll().subscribe((response) => {
+      response.results.forEach((result) => {
         this.items.push(result);
         this.types = super.getFilterBy(result);
       });

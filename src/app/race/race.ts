@@ -1,13 +1,12 @@
 import { BaseApiModel } from '../models/baseApiModel';
-import { iApiModel } from '../interfaces/iApiModel';
-import { iKeyValuePair } from '../interfaces/iKeyValuePair';
+import { IkeyValuePair } from '../interfaces/iKeyValuePair';
 
 export class Race extends  BaseApiModel {
   age: string;
   baseRaceModel: BaseRaceModel;
   alignment: string;
   size: string;
-  speed: iKeyValuePair<string, number>;
+  speed: IkeyValuePair<string, number>;
   speed_desc: string;
   languages: string;
   vision: string;
@@ -24,4 +23,5 @@ export class AsiModel {
   attributes: Array<string>;
   value: number;
 }
-
+
+
