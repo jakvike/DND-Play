@@ -1,7 +1,5 @@
-
 <h1>{{title | titlecase}}</h1>
 <hr />
-<app-search></app-search>
 <ngb-accordion #acc="ngbAccordion">
   <ngb-panel *ngFor="let item of items; index as i;" id="panel{{i}}">
     <ng-template ngbPanelHeader let-opened="opened">
