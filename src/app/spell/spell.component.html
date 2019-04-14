@@ -1,7 +1,7 @@
 
 <h1>{{title | titlecase}}</h1>
 <hr />
-<app-search #search [searchArray]="ites" [searchTypes]="types"></app-search>
+<app-search #search [searchArray]="items" [searchTypes]="types"></app-search>
 <ngb-accordion #acc="ngbAccordion">
   <ngb-panel *ngFor="let item of items | filterBy: search.searchText; index as i;" id="panel{{i}}">
     <ng-template ngbPanelHeader let-opened="opened">
