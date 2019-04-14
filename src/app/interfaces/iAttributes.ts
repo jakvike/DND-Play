@@ -1,4 +1,4 @@
-export interface iAttributes{
+export interface iAttributes {
     strength: number;
     dexterity: number;
     constitution: number;

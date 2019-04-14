@@ -5,7 +5,7 @@ export interface iApiModel {
   desc: string;
 }
 
-export interface iResultModel<T>{
+export interface iResultModel<T> {
   results: T[];
 }
 

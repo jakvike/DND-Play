@@ -44,7 +44,7 @@ import { SearchComponent } from './search/search.component';
     ConditionComponent,
     SearchComponent
   ],
-  
+
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     MatButtonModule,
@@ -72,7 +72,7 @@ import { SearchComponent } from './search/search.component';
     BrowserAnimationsModule,
     FilterPipeModule
   ],
-  exports:[
+  exports: [
     MatButtonModule,
     MatCheckboxModule,
     MatFormFieldModule,
@@ -83,8 +83,8 @@ import { SearchComponent } from './search/search.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-  constructor(){
+export class AppModule {
+  constructor() {
     library.add(faCoffee);
     library.add(faSearch);
   }

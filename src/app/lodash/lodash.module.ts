@@ -10,17 +10,17 @@ declare module 'lodash' {
   }
 }
 
-module LoDashModule {
+namespace LoDashModule {
   export function isEmptyArray<T>(a: T): boolean {
     return Array.isArray(a) && !a.length;
   }
-  export function isNullOrEmptyString(str: string) : boolean{
+  export function isNullOrEmptyString(str: string): boolean {
     return str === '' || _.isNil(str);
   }
-  export function isEmptyString(str: string) : boolean{
+  export function isEmptyString(str: string): boolean {
     return str === '';
   }
-  export function isNonEmptyString(str: string) : boolean{
+  export function isNonEmptyString(str: string): boolean {
     return str !== '';
   }
 }
@@ -32,6 +32,6 @@ _.mixin(Object.keys(LoDashModule)
                    return object;
                  },
                  Object.create(null)
-              )); 
+              ));
 
 export default _;

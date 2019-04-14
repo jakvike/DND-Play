@@ -1,5 +1,5 @@
-import { BaseApiModel } from "../models/baseApiModel";
-import { iApiModel, IMonsterApiModel } from "../interfaces/iApiModel";
+import { BaseApiModel } from '../models/baseApiModel';
+import { iApiModel, IMonsterApiModel } from '../interfaces/iApiModel';
 import { IDamageAttributes } from '../interfaces/iDamageAttributes';
 import { iAttributes } from '../interfaces/iAttributes';
 import { ISaveAttributes } from '../interfaces/iSaveAttributes';
@@ -19,7 +19,7 @@ export class Monster extends BaseApiModel {
   attributes: iAttributes;
   damages: IDamageAttributes;
   saves: ISaveAttributes;
-  senses:string;
+  senses: string;
   challenge_rating: string;
   perception: number;
   reactions: string;
@@ -28,11 +28,11 @@ export class Monster extends BaseApiModel {
   xp: string;
 }
 
-export class CrToXp{
-default: CRXP; 
+export class CrToXp {
+default: CRXP;
 }
 
-export class CRXP{
+export class CRXP {
   cr: string;
   xp: string;
 }

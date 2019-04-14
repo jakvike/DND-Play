@@ -2,7 +2,7 @@ import { iAttributes } from '../interfaces/iAttributes';
 import { ISaveAttributes } from '../interfaces/iSaveAttributes';
 import { IDamageAttributes } from '../interfaces/iDamageAttributes';
 
-export class BaseAttributes implements iAttributes{
+export class BaseAttributes implements iAttributes {
     strength: number;
     dexterity: number;
     constitution: number;

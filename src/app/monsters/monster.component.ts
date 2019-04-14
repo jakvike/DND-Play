@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import crToXpJson from './crToxp.json';
 import _ from 'lodash';
 import { BaseService } from '../services/baseService';
-import { Monster,CRXP } from './monster';
+import { Monster, CRXP } from './monster';
 import { BaseResultsModel } from '../models/baseApiModel';
 import { SearchType } from '../models/search.js';
 
@@ -20,16 +20,16 @@ export class MonsterComponent extends BaseService<BaseResultsModel<Monster>> imp
   constructor(http: HttpClient) {
     const baseModelUrl = 'monsters';
     super(baseModelUrl, http);
-    this.crToXp = crToXpJson
+    this.crToXp = crToXpJson;
   }
 
   ngOnInit(): void {
     this.monsters = new Array<Monster>();
-    
+
     super.findAll().subscribe((response) => {
-      response.results.forEach(result => {;
-        let cr = _.find(this.crToXp, ['cr', result.challenge_rating]);
-        let crEmpty = cr !== null || cr.xp !== null;
+      response.results.forEach(result => {
+        const cr = _.find(this.crToXp, ['cr', result.challenge_rating]);
+        const crEmpty = cr !== null || cr.xp !== null;
         if (crEmpty) {
           result.xp = cr.xp;
         }

@@ -1,4 +1,4 @@
-export interface ISaveAttributes{
+export interface ISaveAttributes {
     strength_save: number | null;
     dexterity_save: number | null;
     constitution_save: number | null;

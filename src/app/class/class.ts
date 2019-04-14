@@ -1,5 +1,5 @@
-import { BaseApiModel } from "../models/baseApiModel";
-import { iApiModel } from "../interfaces/iApiModel";
+import { BaseApiModel } from '../models/baseApiModel';
+import { iApiModel } from '../interfaces/iApiModel';
 
 export class Class extends  BaseApiModel {
   hit_dice: string;
