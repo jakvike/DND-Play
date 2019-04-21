@@ -1,5 +1,5 @@
 {
-  "name": "open5-e",
+  "name": "dnd-play",
   "version": "0.0.0",
   "main": "webpack.config.js",
   "scripts": {
@@ -11,7 +11,8 @@
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
     "e2e": "ng e2e",
-    "build:dev": "webpack-dev-server --inline --hot --progress --port 8080"
+    "build:dev": "webpack-dev-server --inline --hot --progress --port 8080",
+    "build:ngdev": "ng serve"
   },
   "private": true,
   "dependencies": {
@@ -85,6 +86,7 @@
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.11.1",
     "typescript": "~3.2.2",
-    "webpack-cli": "^3.3.0"
+    "webpack-cli": "^3.3.0",
+    "xml2js": "^0.4.19"
   }
 }

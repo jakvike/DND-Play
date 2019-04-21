@@ -124,11 +124,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "open5E:serve"
+            "devServerTarget": "dndPlay:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "open5E:serve:production"
+              "devServerTarget": "dndPlay:serve:production"
             }
           }
         },
@@ -144,5 +144,5 @@
       }
     }
   },
-  "defaultProject": "open5E"
+  "defaultProject": "dndPlay"
 }
