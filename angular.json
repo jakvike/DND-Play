@@ -16,7 +16,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "options": {
+          "options": {            
             "outputPath": "dist/",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -53,7 +53,7 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
+              "buildOptimizer": true,              
               "budgets": [
                 {
                   "type": "initial",
@@ -67,7 +67,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "open5E:build"
+            "browserTarget": "open5E:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {

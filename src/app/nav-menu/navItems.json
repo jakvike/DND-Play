@@ -48,7 +48,12 @@
     "name": "Conditions",
     "link": "/conditions",
     "class": ["far", "circle"]
-  }
+  },
+  {
+    "name": "Character",
+    "link": "/character",
+    "class": ["far", "circle"]
+  }  
 ]
 
 

@@ -1,18 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
-
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCoffee, faSearch } from '@fortawesome/free-solid-svg-icons';
 
+import { CookieModule } from 'ngx-cookie';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -27,6 +27,7 @@ import { PlaneComponent } from './plane/plane.component';
 import { FeatComponent } from './feat/feat.component';
 import { ConditionComponent } from './condition/condition.component';
 import { SearchComponent } from './search/search.component';
+import { CharacterComponent } from './character/character.component';
 
 @NgModule({
   'declarations': [
@@ -43,6 +44,7 @@ import { SearchComponent } from './search/search.component';
     FeatComponent,
     ConditionComponent,
     SearchComponent,
+    CharacterComponent,
   ],
 
   'imports': [
@@ -53,6 +55,7 @@ import { SearchComponent } from './search/search.component';
     MatInputModule,
     MatSelectModule,
     HttpClientModule,
+    HttpClientJsonpModule,
     FormsModule,
     RouterModule.forRoot([
       { 'path': '', 'component': HomeComponent, 'pathMatch': 'full' },
@@ -65,12 +68,14 @@ import { SearchComponent } from './search/search.component';
       { 'path': 'planes', 'component': PlaneComponent },
       { 'path': 'feats', 'component': FeatComponent },
       { 'path': 'conditions', 'component': ConditionComponent },
+      { 'path': 'character', 'component': CharacterComponent },
     ]),
     NgbModule,
     MarkdownModule.forRoot(),
     FontAwesomeModule,
     BrowserAnimationsModule,
     FilterPipeModule,
+    CookieModule.forRoot()
   ],
   'exports': [
     MatButtonModule,

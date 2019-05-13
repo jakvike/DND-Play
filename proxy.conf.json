@@ -1,0 +1,8 @@
+{
+    "/character/*/json": {
+      "target":  "https://www.dndbeyond.com",
+      "secure": true,
+      "logLevel":"debug",
+      "changeOrigin": true
+    }   
+}

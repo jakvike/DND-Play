@@ -1,8 +1,8 @@
 version: '2.1'
 
 services:
-  open5e:
-    image: open5e
+  dndPlay:
+    image: dndPlay
     build:
       context: .
       dockerfile: Dockerfile

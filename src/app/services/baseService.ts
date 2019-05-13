@@ -1,14 +1,22 @@
 import { IWrite } from '../interfaces/iWrite';
 import { IRead } from '../interfaces/iRead';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { SearchType } from '../models/search';
 import * as _ from 'lodash';
+
 export abstract class BaseService<T> implements IWrite<T>, IRead<T> {
   private baseUrl = 'https://api-beta.open5e.com/';
   private url: string;
   private http: HttpClient;
   private searchTypes: Array<SearchType>;
+  private headers = new HttpHeaders({
+    'Content-Type': 'application/json; charset=utf-8',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Credentials': 'true',
+    'Access-Control-Allow-Methods': 'GET, OPTIONS, HEAD',
+    'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With'
+  });
 
   constructor(baseClassUrl: string, http: HttpClient) {
     this.http = http;
@@ -17,6 +25,7 @@ export abstract class BaseService<T> implements IWrite<T>, IRead<T> {
   }
 
   findAll(): Observable<T> {
+    // tslint:disable-next-line: prefer-template
     return this.http.get<T>(this.url + '?limit=1000');
   }
   find(item: T): Observable<T> {
