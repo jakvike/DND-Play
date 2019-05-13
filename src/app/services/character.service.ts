@@ -20,6 +20,6 @@ export class CharacterService {
   private getViaRxJs(characterId: number) {
     // tslint:disable-next-line: prefer-template
     const url = this.dndBeyondUrl + characterId + '/json';
-    return this.http.jsonp(url, 'callback');
+    return this.http.get(url, { 'headers': this.headers, 'responseType': 'blob' });
   }
 }
